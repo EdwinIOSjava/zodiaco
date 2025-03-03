@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    tools:context=".MenuActivity">
+    tools:context=".MenuActivity"
+    android:background="#3E2001">
 
     <Button
         android:id="@+id/ZodiacButton"
