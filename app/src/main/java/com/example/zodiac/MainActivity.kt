@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         val adapter = HoroscopeAdapter(horoscopeList)
 
         recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        recyclerView.layoutManager =LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
     }
 
 }
