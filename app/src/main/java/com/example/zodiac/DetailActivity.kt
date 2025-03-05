@@ -43,6 +43,7 @@ class DetailActivity : AppCompatActivity() {
 }
 
 
+
 // creamos un menu en este Activity
         override fun onCreateOptionsMenu(menu: Menu?): Boolean {
             menuInflater.inflate(R.menu.menu_activity_detail, menu)
