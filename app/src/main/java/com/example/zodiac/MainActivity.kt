@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     var horoscopeList: List<Horoscope> = Horoscope.horoscopeList
 
     lateinit var recyclerView: RecyclerView
+    lateinit var adapter: HoroscopeAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
 
         recyclerView = findViewById(R.id.recyclerView)
-        val adapter = HoroscopeAdapter(horoscopeList) { position ->
+         adapter = HoroscopeAdapter(horoscopeList) { position ->
             val horoscope = horoscopeList[position]
             Toast.makeText(this, horoscope.name, Toast.LENGTH_SHORT).show()
 
@@ -54,13 +55,18 @@ class MainActivity : AppCompatActivity() {
         val searchView = menuItem?.actionView as SearchView
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            // detecta que se ha pulsado enter
             override fun onQueryTextSubmit(query: String): Boolean {
                 Log.i("MENU", "He pulsado Enter")
                 return false
             }
+            // aqui el texto que se escribe se recibe por cada cambio que detecta
+            override fun onQueryTextChange(query: String): Boolean {
+                horoscopeList = Horoscope.horoscopeList.filter {
+                    getString(it.name).contains(query, true)
+                }
 
-            override fun onQueryTextChange(s: String): Boolean {
-                Log.i("MENU", s)
+                adapter.updateItems(horoscopeList)
                 return false
             }
         })

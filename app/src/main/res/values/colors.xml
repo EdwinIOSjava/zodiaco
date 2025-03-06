@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="background">#6E0D25</color>
+    <color name="background2">#DCAB6B</color>
     <color name="black">#FF000000</color>
     <color name="Font1white">#FFFFFFFF</color>
-    <color name="background">#3E1C02</color>
-    <color name="background2">#D76E20</color>
+    <color name="brownSand">#774E24</color>
+
+
 
 </resources>

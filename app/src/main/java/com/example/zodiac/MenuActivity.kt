@@ -20,13 +20,15 @@ class MenuActivity : AppCompatActivity() {
             insets
         }
 
-    val ZodiacButton = findViewById<Button>(R.id.ZodiacButton)
-        ZodiacButton.setOnClickListener {navigateZodiacView()}
+        val zodiacButton = findViewById<Button>(R.id.ZodiacButton)
+        zodiacButton.setOnClickListener { navigateZodiacView() }
+
 
     }
 
+
     private fun navigateZodiacView() {
-        val intent=Intent(this,MainActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
 }
