@@ -117,7 +117,7 @@ class DetailActivity : AppCompatActivity() {
 
     private fun setFavoriteIcon() {
         if (isFavorite) {
-            favoriteMenu.setIcon(R.drawable.ic_favorite_selected)
+            favoriteMenu.setIcon(R.drawable.ic_favorite_selected2)
         } else {
             favoriteMenu.setIcon(R.drawable.ic_favorite)
         }

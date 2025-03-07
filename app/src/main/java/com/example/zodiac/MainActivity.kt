@@ -21,6 +21,9 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var recyclerView: RecyclerView
     lateinit var adapter: HoroscopeAdapter
+    // creamos variable para el menu search . Esta variable nos dirà que item seleccionamos apra , en la funcion OnResume(), refrescar con los items cambiados al momento de
+    //volver a la apntalla anterior
+    var selectedPosition = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +38,10 @@ class MainActivity : AppCompatActivity() {
 
 
         recyclerView = findViewById(R.id.recyclerView)
+    }
+    // acortamos la funcion OnCreate() y creamos la funcion OnResume() para que  cuando vuelva a la pantalla anterior se refresque con los items cambiados
+    override fun onResume() {
+        super.onResume()
          adapter = HoroscopeAdapter(horoscopeList) { position ->
             val horoscope = horoscopeList[position]
             Toast.makeText(this, horoscope.name, Toast.LENGTH_SHORT).show()
@@ -42,6 +49,8 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra(DetailActivity.EXTRA_HOROSCOPE_ID, horoscope.id)
             startActivity(intent)
+
+             selectedPosition = position// guardamos la posicion del item seleccionado
         }
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)

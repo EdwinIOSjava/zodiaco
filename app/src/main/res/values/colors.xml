@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background">#6E0D25</color>
-    <color name="background2">#DCAB6B</color>
+    <color name="background">#330C2F</color>
+    <color name="lile">#7b287d</color>
+    <color name="blueLight">#7067cf</color>
     <color name="black">#FF000000</color>
     <color name="Font1white">#FFFFFFFF</color>
     <color name="brownSand">#774E24</color>
-
+    <color name="SignoColorText">#E7AB30</color>
+    <color name="favorite">#F44336</color>
 
 
 </resources>
