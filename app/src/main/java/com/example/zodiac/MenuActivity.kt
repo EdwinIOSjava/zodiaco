@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 
 class MenuActivity : AppCompatActivity() {
@@ -14,21 +12,15 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_welcome)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
-        val zodiacButton = findViewById<Button>(R.id.ZodiacButton)
-        zodiacButton.setOnClickListener { navigateZodiacView() }
 
+    val ZodiacButton = findViewById<Button>(R.id.ZodiacButton)
+        ZodiacButton.setOnClickListener {navigateZodiacView()}
 
     }
 
-
     private fun navigateZodiacView() {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent=Intent(this,MainActivity::class.java)
         startActivity(intent)
     }
 }
